@@ -1,0 +1,24 @@
+{
+    "name": "antoniog85/mediatype",
+    "description": "A PHP implementation of some common media types. Uses Symfony HTTP-foundation",
+    "keywords": ["api", "media", "type", "rest", "restful", "hypermedia", "content"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [{
+        "name": "Antonio Giuliana",
+        "email": "antonio@antoniogiuliana.com"
+    }],
+    "require": {
+        "php": ">=7.0",
+        "symfony/http-foundation": ">=3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.0.*"
+    },
+    "autoload": {
+        "psr-4": {"Antoniog85\\MediaType\\": "src"}
+    },
+    "autoload-dev": {
+        "psr-4": {"Antoniog85\\MediaType\\Tests\\": "tests"}
+    }
+}

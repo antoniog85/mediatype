@@ -1,0 +1,9 @@
+version: '2'
+services:
+  php:
+    container_name: php
+    image: php:7.0-fpm
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "127.0.0.1:10000:9000"
