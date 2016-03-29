@@ -6,14 +6,19 @@ use Symfony\Component\HttpFoundation\Response;
 
 class CollectionJson
 {
+    /** @var string */
     private $version = '';
 
+    /** @var string */
     private $href = '';
 
+    /** @var array */
     private $error = [];
 
+    /** @var array */
     private $items = [];
 
+    /** @var Link[] */
     private $links = [];
 
     /**
@@ -54,6 +59,18 @@ class CollectionJson
             return;
         }
         $this->items = json_decode($response->getContent());
+    }
+
+    /**
+     * @param string $href
+     * @param string $rel
+     */
+    public function addLink(string $href, string $rel)
+    {
+        $link = new Link();
+        $link->setHref($href);
+        !is_null($rel) && $link->setRel($rel);
+        $this->links[] = $link->toArray();
     }
 
     /**
