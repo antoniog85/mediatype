@@ -18,7 +18,7 @@ class CollectionJson
     /** @var array */
     private $items = [];
 
-    /** @var Link[] */
+    /** @var array */
     private $links = [];
 
     /**
@@ -67,10 +67,7 @@ class CollectionJson
      */
     public function addLink(string $href, string $rel)
     {
-        $link = new Link();
-        $link->setHref($href);
-        !is_null($rel) && $link->setRel($rel);
-        $this->links[] = $link->toArray();
+        $this->links[$rel] = $href;
     }
 
     /**
